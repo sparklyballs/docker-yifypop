@@ -2,10 +2,11 @@ FROM linuxserver/baseimage
 
 MAINTAINER Sparklyballs <sparklyballs@liunxserver.io>
 
-ENV APTLIST="build-essential git-core"
+ENV APTLIST="build-essential git-core python"
 
 # install packages
-RUN apt-get update && \
+RUN add-apt-repository ppa:fkrull/deadsnakes-python2.7 && \
+apt-get update && \
 apt-get install $APTLIST -qy && \
 
 # build node
