@@ -5,7 +5,7 @@ MAINTAINER Sparklyballs <sparklyballs@liunxserver.io>
 ENV APTLIST="build-essential git-core"
 
 # install packages
-RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
+RUN apt-get update && \
 apt-get install $APTLIST -qy && \
 
 # build node
