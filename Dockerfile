@@ -2,12 +2,12 @@ FROM linuxserver/baseimage
 
 MAINTAINER Sparklyballs <sparklyballs@liunxserver.io>
 
-ENV APTLIST="nodejs npm git-core"
+ENV APTLIST="build-essential nodejs git-core"
 
 # install packages
-RUN apt-get update -q && \
+RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
 apt-get install $APTLIST -qy && \
-ln -s /usr/bin/nodejs /usr/bin/node && \
+npm install -g npm@latest && \
 
 # cleanup
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
