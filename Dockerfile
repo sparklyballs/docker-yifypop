@@ -1,4 +1,4 @@
-FROM linuxserver/baseimage
+FROM linuxserver/baseimage.node
 
 MAINTAINER Sparklyballs <sparklyballs@liunxserver.io>
 
